@@ -71,9 +71,6 @@ pi = 4 * len(circle_x) / float(N)
 print("Pi is approximately: " + str(pi))
 print("Pi is actually: " + str(np.pi))
 
-
 plt.plot(circle_x, circle_y, 'b.')
 plt.plot(square_x, square_y, 'r.')
 print(plt.show())
-
-
