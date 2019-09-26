@@ -16,47 +16,58 @@ kendrick = turtle.Turtle()
 kendrick.color('hotpink')
 kendrick.pensize(3)
 
+# for i in range(10, 30, 10):
 
-for i in range(10, 100, 10):
-    kendrick.forward(i)
-    kendrick.left(90)
-
-    kendrick.forward(i)
-    kendrick.left(90)
-
-    kendrick.forward(i)
-    kendrick.left(90)
-
-    kendrick.forward(i)
-    kendrick.left(90)
-
+def reset():
     kendrick.penup()
-    kendrick.backward(10)
+    kendrick.backward(length)
     kendrick.right(90)
-    kendrick.forward(10)
+    kendrick.forward(length)
     kendrick.left(90)
     kendrick.pendown()
 
+# Square 1
+length = 10
+for j in range(4):
+    kendrick.forward(length)
+    kendrick.left(90)
 
-'''
-kendrick.forward(10)
-kendrick.left(90)
+reset()
 
-kendrick.forward(10)
-kendrick.left(90)
+# Square 2
+for k in range(4):
+    kendrick.forward(length * 3)
+    kendrick.left(90)
 
-kendrick.forward(10)
-kendrick.left(90)
+reset()
 
-kendrick.forward(10)
-kendrick.left(90)
+# Square 3
+for l in range(4):
+    kendrick.forward(length * 5)
+    kendrick.left(90)
 
-kendrick.penup()
-kendrick.backward(10)
-kendrick.right(90)
-kendrick.forward(10)
-kendrick.left(90)
-kendrick.pendown()
-'''
+reset()
+
+# Square 4
+for m in range(4):
+    kendrick.forward(length * 7)
+    kendrick.left(90)
+
+reset()
+
+# Square 5
+for n in range(4):
+    kendrick.forward(length * 9)
+    kendrick.left(90)
+
+reset()
+
+# Square 6
+for o in range(4):
+    kendrick.forward(length * 11)
+    kendrick.left(90)
+
+reset()
 
 window.exitonclick()
+
