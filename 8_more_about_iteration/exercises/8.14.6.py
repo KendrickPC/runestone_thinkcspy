@@ -56,10 +56,17 @@ def check_on_screen(w, t):
     turtleY = t.ycor()
 
     stillIn = True
-    if turtleX < leftBound or turtleX > rightBound:
-        stillIn = False
-    if turtleY < bottomBound or turtleY > topBound:
-        stillIn = False
+    if turtleX <= leftBound or turtleX >= rightBound:
+        # Turtle turns around after hit barrier wall
+        t.right(180)
+        t.forward(100)
+        stillIn = True
+
+    if turtleY <= bottomBound or turtleY >= topBound:
+        # Turtle turns around after hit barrier wall
+        t.right(180)
+        t.forward(100)
+        stillIn = True
     return stillIn
 
 
