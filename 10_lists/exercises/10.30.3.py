@@ -12,3 +12,23 @@ statements to do the following:
 
 '''
 
+# Starting with list from previous exercise
+myList = [76, 92.3, 'hello', True, 4, 76]
+
+
+myList.append("apple")
+myList.append(76)
+myList.insert(3, 'cat')
+myList.insert(0, 99)
+
+print("\nFinding index of 'hello'.")
+print(myList.index('hello'))
+
+print("\nCounting the number of 76s in the list.")
+print(myList.count(76))
+
+myList.remove(76)
+myList.pop(myList.index(True))
+
+print("\nEnding List:")
+print(myList)
