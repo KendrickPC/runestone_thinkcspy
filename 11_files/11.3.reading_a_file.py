@@ -22,3 +22,8 @@ result in an error.
 
 '''
 
+fileref = open("qbdata.txt", "r")
+# The code below erases the data in my files..
+# fileref = open("qbdata.txt", "w")
+# filevariable.close()
+fileref.close()
