@@ -20,45 +20,33 @@ The first 10 lines of your output file should look something like this:
 '''
 
 
-f = open('alice.txt', 'r')
+import string
 
-# Empty dictionary to keep key/value pairs of letters and number of occurances
-count = {}
+infile = open('alice.txt', 'r')
 
-for line in f:
-    for word in line.split():
-        # Removal of all punctuations.
-        word = word.replace('_', '').replace('"', '').replace(',', '').replace('.', '')
-        word = word.replace('-', '').replace('?', '').replace('!', '').replace("'", "")
-        word = word.replace('(', '').replace(')', '').replace(':', '').replace('[', '')
-        word = word.replace(']', '').replace(';', '')
+text = infile.readlines()
 
-        # Set to lower case
-        word = word.lower()
+counts = {}
 
-        # Ignoring numbers inside text.
-        if word.isalpha():
-            if word in count:
-                count[word] = count[word] + 1
-            else:
-                count[word] = 1
+for line in text:
+    for word in line:
+        counts[word] = counts.get (word, 0) +1
+'''
+if word != " ":
+    if word != ".":
+'''         
 
-# Python3 sort documentation call
-keys = sorted(count.keys())
-
-# saving word count to a file.
-
-out = open('alice_words.txt')
-
-for word in keys:
-    out.write(word +  ' ' + str(count[word]))
-    out.write('\n')
-
-print("The word 'alice' appears " + str(count['alice']) + " times in the book.")
+word_keys = sorted(counts.keys())
 
 
-# f.close()
+infile.close()
 
+outfile = open("alice_words.txt", 'w')
+outfile.write("Word \t \t Count \n")
+outfile.write("======================= \n")
 
+for word in word_keys:
+    outfile.write("%-12s%d\n" % (word.lower(), counts[word]))
 
+outfile.close()
 
