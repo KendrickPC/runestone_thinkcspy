@@ -19,7 +19,7 @@ it as flaskhello.py (or whatever name you like). Then, download the Flask
 framework and install it on your computer. In many cases, you can
 accomplish this using the pip command included with your Python distribution:
 
-    pip install flask
+    sudo pip3 install flask
 
 Next, execute your flaskhello.py program from the command line:
 
@@ -38,3 +38,24 @@ You should see a message similar to the following appear on the console:
     * Running on http://localhost:5000/ (Press CTRL+C to quit)
 
 '''
+
+
+from flask import Flask
+from datetime import datetime
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+ return """<html><body>
+     <h1>Hello, world!</h1>
+     The time is {0}.</body></html>""".format(
+         str(datetime.now()))
+
+# Launch the Flask dev server
+app.run(host="localhost", debug=True)
+
+# favicon.ico unavailable
+
+
+
