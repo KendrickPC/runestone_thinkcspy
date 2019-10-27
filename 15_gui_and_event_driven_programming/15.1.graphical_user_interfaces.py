@@ -1,3 +1,20 @@
+# -*- coding: utf-8 -*-
+
+import tkinter as tk
+from tkinter import ttk
+
+# Creating application window
+window = tk.Tk()
+
+# Create the user interface
+my_label = ttk.Label(window, text="Hello World!")
+my_label.grid(row=1, column=1)
+
+# Start the GUI Event Loop
+window.mainloop()
+
+
+
 # 15.1 Graphical User Interfaces
 '''
 A graphical user interface (GUI) allows a user to interact with a computer
@@ -6,7 +23,7 @@ computer screen. The small pictures are called icons or widgets. Various
 types of pointing devices can be used, such as a mouse, a stylus pen, or
 a human finger on a touch screen.
 
-We refer to programs that use a graphical user interface as “GUI programs.”
+We refer to programs that use a graphical user interface as GUI programs.
 A GUI program is very different from a program that uses a command line
 interface which receives user input from typed characters on a keyboard.
 Typically programs that use a command line interface perform a series of tasks
@@ -87,13 +104,44 @@ TKinter is an abbreviation for “TK interface”. “TK” is a platform indepe
 customizable, and configurable GUI library. The Python module TKinter allows
 Python programs to use the TK libraries. An overview of TK can be found at
 https://en.wikipedia.org/wiki/Tk_(software)_
+'''
 
+# 15.5. Tkinter Pre-programmed Interfaces
+'''
+Tkinter provides a set of standard GUI dialog boxes that can be used with
+minimal programming. These are described in the next lesson. (A dialog box
+is a small window on a computer screen in which a user is prompted to provide
+information or select commands.)
+'''
+
+# 15.6. Tkinter Custom Interfaces
+'''
+Tkinter also provides the functionality to create any user interface imaginable.
+To create a custom GUI program you basically do five things:
+
+    - Create instances of the widgets you want in your interface.
+    - Define the layout of the widgets (i.e., the location and size of each widget).
+    - Create functions that will perform your desired actions on user generated events.
+    - Connect your functions to specific user events.
+    - Start a GUI event-loop.
+
+Each of these tasks are explain in detail in the following lessons.
+Note: All coding examples in these lessons assume you are using Python 3.5 or greater.
+'''
+
+# 15.7. Hello World
+'''
+Many programming languages are introduced to new users by showing them how to
+display “Hello world!” on the screen. This is considered to be the simplest
+possible program you can write in the language. In that spirit, here is a GUI
+program that displays “Hello World!:
 '''
 
 
 
 
-
+# https://stackoverflow.com/questions/55722267/how-to-fix-importerror-cannot-import-name-ttk-in-python-3-6-8
+        # python -m tkinter
 
 
 
