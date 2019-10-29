@@ -23,31 +23,57 @@ The code that generated this Sierpinski Triangle is shown below.
 '''
 
 
+# PEP8 Verified
+'''
+The sierpinski function relies heavily on the getMid function. getMid takes
+as arguments two endpoints and returns the point halfway between them. In
+addition, this program has a function that draws a filled triangle using
+the begin_fill and end_fill turtle methods.
+'''
+
+
 import turtle
 
-def drawSierpinski(length, depth):
-    if depth == 0:
-        for i in range(0, 3):
-            t.fd(length)
-            t.left(120)
-    else:
-        drawSierpinski(length/2, depth-1)
-        t.fd(length/2)
-        drawSierpinski(length/2, depth-1)
-        t.bk(length/2)
-        t.left(60)
-        t.fd(length/2)
-        t.right(60)
-        drawSierpinski(length/2, depth-1)
+
+def drawTriangle(points, color, myTurtle):
+    myTurtle.fillcolor(color)
+    myTurtle.up()
+    myTurtle.goto(points[0][0], points[0][1])
+    myTurtle.down()
+    myTurtle.begin_fill()
+    myTurtle.goto(points[1][0], points[1][1])
+    myTurtle.goto(points[2][0], points[2][1])
+    myTurtle.goto(points[0][0], points[0][1])
+    myTurtle.end_fill()
 
 
-window = turtle.Screen()
-t = turtle.Turtle()
-drawSierpinski(250, 2)
-window.exitonclick()
+def getMid(p1, p2):
+    return ((p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2)
 
 
+def sierpinski(points, degree, myTurtle):
+    colormap = ['blue', 'red', 'green', 'white', 'yellow', 'violet', 'orange']
+    drawTriangle(points, colormap[degree], myTurtle)
+    if degree > 0:
+        sierpinski([points[0],
+                    getMid(points[0], points[1]),
+                    getMid(points[0], points[2])],
+                   degree-1, myTurtle)
+        sierpinski([points[1],
+                    getMid(points[0], points[1]),
+                    getMid(points[1], points[2])],
+                   degree-1, myTurtle)
+        sierpinski([points[2],
+                    getMid(points[2], points[1]),
+                    getMid(points[0], points[2])],
+                   degree-1, myTurtle)
 
 
+def main():
+    myTurtle = turtle.Turtle()
+    myWin = turtle.Screen()
+    myPoints = [[-100, -50], [0, 100], [100, -50]]
+    sierpinski(myPoints, 3, myTurtle)
+    myWin.exitonclick()
 
-
+main()
