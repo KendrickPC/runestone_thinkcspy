@@ -58,12 +58,42 @@ Self Check
 
 Modify the recursive tree program using one or all of the following ideas:
 
-Modify the thickness of the branches so that as the branchLen gets smaller, the line gets thinner.
+1. Modify the thickness of the branches so that as the branchLen gets smaller, the line gets thinner.
 
-Modify the color of the branches so that as the branchLen gets very short it is colored like a leaf.
+2. Modify the color of the branches so that as the branchLen gets very short it is colored like a leaf.
 
-Modify the angle used in turning the turtle so that at each branch point the angle is selected at random in some range. For example choose the angle between 15 and 45 degrees. Play around to see what looks good.
+3. Modify the angle used in turning the turtle so that at each branch point the angle is selected at random in some range. For example choose the angle between 15 and 45 degrees. Play around to see what looks good.
 
-Modify the branchLen recursively so that instead of always subtracting the same amount you subtract a random amount in some range.
+4. Modify the branchLen recursively so that instead of always subtracting the same amount you subtract a random amount in some range.
 '''
+# Reference:
+# https://docs.python.org/2/library/turtle.html
+
+import turtle
+
+def tree(branchLen,t):
+    if branchLen > 2:
+        t.forward(branchLen)
+        t.right(20)
+        tree(branchLen-15,t)
+        t.left(40)
+        tree(branchLen-15,t)
+        t.right(20)
+        t.backward(branchLen)
+
+def main():
+    t = turtle.Turtle()
+    myWin = turtle.Screen()
+    t.left(90)
+    t.up()
+    t.backward(100)
+    t.down()
+    t.color("green")
+    # Modification #1 complete with code below.
+    t.width(5)
+    # Modification #2 complete with code below.
+    tree(50,t)
+    myWin.exitonclick()
+
+main()
 
