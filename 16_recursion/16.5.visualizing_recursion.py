@@ -92,7 +92,7 @@ def main():
     # Modification #1 complete with code below.
     t.width(5)
     # Modification #2 complete with code below.
-    tree(50,t)
+    tree(250,t)
     myWin.exitonclick()
 
 main()
