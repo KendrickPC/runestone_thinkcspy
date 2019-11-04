@@ -9,3 +9,7 @@ everyone safely to the other side of the river.
 
 # Reference:
 # https://www.geeksforgeeks.org/missionaries-and-cannibals/
+# https://github.com/gbroques/missionaries-and-cannibals/blob/master/main.py
+# https://github.com/jviriato/missionaries-and-cannibals
+
+
