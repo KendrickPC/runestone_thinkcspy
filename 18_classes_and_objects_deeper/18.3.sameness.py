@@ -18,6 +18,9 @@ talked about aliases. It allows us to find out if two references
 refer to the same object.
 '''
 
+def sameRational(f1, f2):
+    return f1.getNum() * f2.getDen() == f2.getNum() * f1.getDen()
+
 
 class Fraction:
     def __init__(self, top, bottom):
@@ -26,6 +29,12 @@ class Fraction:
 
     def __str__(self):
         return str(self.num) + "/" + str(self.den)
+
+    def getNum(self):
+        return self.num
+
+    def getDen(self):
+        return self.den
 
 
 print("\nExample 1:")
@@ -37,3 +46,12 @@ print(myfraction is yourfraction)
 print("\nExample 2:")
 ourfraction = myfraction
 print(myfraction is ourfraction)
+
+
+print("\nExample 3:")
+print(sameRational(myfraction, yourfraction))
+
+print("\nExample 4:")
+notInLowestTerms = Fraction(15, 20)
+print(sameRational(myfraction, notInLowestTerms))
+
